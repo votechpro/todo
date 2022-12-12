@@ -1,0 +1,14 @@
+mixin todoItem(todo)
+    .todo-item.border-btm
+        .row
+            form(style="width:20px;height:20px;position:relative;" enctype="multipart/form-data" method="POST" action=`/todo/${todo.id}`)
+                button(type="submit" class=`checkbox ${todo.completed ? "checkbox-sel" : ""}`)
+            .todo-content(style="margin-left:1rem;")
+                p.title #{todo.title}
+                p.description #{todo.description}
+                .row.rw-center.btn.btn-outline
+                    span.material-symbols-outlined calendar_month
+                    p.details #{todo.due_date}
+                    span.dot
+                    span.material-symbols-outlined person
+                    p.details #{todo.assigned_to}

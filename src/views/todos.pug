@@ -1,0 +1,49 @@
+include components/todoItem
+include components/warning
+include components/accountOptions
+include header
+
+if data && data.user
+    +accountOptions(data.user[0])
+.content.shadow
+    .top-bar.row.border-btm
+        a.tp-bar-item(href="#!") Notifications
+        a.tp-bar-item.selected(href="#!")
+            .row(style="align-items:center;")
+                |Tasks
+                .count_tag #{data && data.todos ? data.todos.length : 0}
+
+
+    .todo-list(style="padding:0 2rem;")
+        if data && data.todos
+            for todo in data.todos
+                +todoItem(todo)
+            else
+                p(style="margin-top:1rem;") No tasks are registered, create one.
+
+    form.form(enctype="multipart/form-data" method="POST")
+        if error
+            +warning(error.type, error.messages)
+        input.inp-txt(type="text" name="title" placeholder="Task name here...") 
+        textarea(name="description" placeholder="Description")
+        .row-sep(style="margin:1rem 0;")
+            .row
+                .btn.btn-outline
+                    span.material-symbols-outlined calendar_month
+                    - const minDate = new Date(Date.now()).getFullYear()+"-"+new Date(Date.now()).getMonth()+"-"+new Date(Date.now()).getDate()
+                    input(type="date" name="due_date" placeholder="Due Date" min=minDate value=minDate)
+
+                if data && data.staff && data.staff.length > 0
+                    .btn.btn-outline
+                        span.material-symbols-outlined person
+                        select(name="user")
+                            option(selected disabled) Assign To 
+                            for stf in staff
+                                option(value=stf.id) #{stf.name}
+
+                .btn.btn-outline(style="height:100%;")
+                    input.user-id(type="text" name="assigned_to" placeholder="User ID")
+
+            .row
+                button.btn.btn-purple(type="submit" style="margin:0;cursor:pointer;")
+                    p Add Task

@@ -1,0 +1,31 @@
+include components/warning
+include header
+
+- const isDataExists = data ? true : false
+
+.viewport
+    .overlay
+        form.log-form(enctype="multipart/form-data" method="POST")
+            if error
+                +warning(error.type,error.messages)
+            .row(style="align-items:center;")
+                p.log-title.mb Sign Up
+                span.dot(style="background-color:black;")
+                a.log-sub-title(href="/" style="color:white;") Login
+            p.log-sub-title.mb-x Enter your credentials to create your account.
+            p.inp-title.mb Username
+            input.input.mb-x(type="text" name="username" value=`${isDataExists ? data.username : ""}`) 
+            .row(style="justify-content:space-between;")
+                div
+                    p.inp-title.mb Firstname
+                    input.input.mb-x(type="text" name="firstname" value=`${isDataExists ? data.firstname : ""}`) 
+                div
+                    p.inp-title.mb Lastname
+                    input.input.mb-x(type="text" name="lastname" value=`${isDataExists ? data.lastname : ""}`) 
+            p.inp-title.mb Password
+            input.input.mb-x(type="password" name="password" value=`${isDataExists ? data.password : ""}`) 
+            button.row(style="background:none;border:none;align-self:flex-end;")
+                p.inp-title Submit
+                span.material-symbols-outlined.inp-title(style="margin:0;") chevron_right
+
+

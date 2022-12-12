@@ -1,0 +1,6 @@
+mixin warning(type,messages)
+    .error.mb-x.column(style=`background:${type==="error"?"#ff000087":"yellow"};padding:.5rem;border-radius:1rem;align-items:center;border:2px red solid;`)
+        span.mb.material-symbols-outlined(style="color:white;font-size:3rem;") error
+        ul(style="list-style-type:none;")
+            for message in messages
+                li.mb(style="color:white;font-weight:900;text-align:center;") #{message}

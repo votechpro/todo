@@ -1,0 +1,352 @@
+doctype html
+
+html
+    head
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        style.
+            *,:root{
+                box-sizing: border-box;
+                --main-color:#672de3;
+            }
+
+            *{
+                margin:0;
+                padding:0;
+            }
+
+            body {
+                justify-content:center;
+                background-color:#efeef5;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            .shadow{
+                -webkit-box-shadow: 0px 1px 8px 2px rgba(0,0,0,0.2); 
+                box-shadow: 0px 1px 8px 2px rgba(0,0,0,0.2);
+            }
+
+            .content{
+                background-color:white;
+                min-width:700px;
+                width:700px;
+                max-width:700px;
+                margin-top:1rem;
+                border-radius:5px;
+            }
+
+            a{
+                text-decoration: none;
+            }
+
+            .row{
+                display:flex;
+                align-items:flex-start;
+            }
+
+            .row-sep{
+                display:flex;
+                justify-content:space-between;
+            }
+
+            .border-btm{
+                border-bottom:1px #e4e3e8 solid;
+            }
+
+            .top-bar{
+                padding:0 1rem;
+            }
+
+            .tp-bar-item{
+                padding:1rem 0;
+                color:#8285a9;
+                font-weight:600;
+                margin-right:1rem;
+                cursor:pointer;
+            }
+
+            .selected{
+                color:black;
+                border-bottom:2px solid var(--main-color);
+            }
+
+            .tp-bar-item:hover{
+                color:black;
+                border-bottom:2px solid var(--main-color);
+            }
+
+            .material-symbols-outlined {
+                font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
+            }
+
+            .todo-item{
+                padding:1rem 0;
+            }
+
+            .title{
+                font-weight:600;
+            }
+
+            .description{
+                color:#8284a2;
+                font-size:0.9rem;
+                margin:.5rem;
+            }
+
+            .dot{
+                width:4px;
+                height:4px;
+                border-radius:calc(4px / 2);
+                background-color:#8284a2;
+                margin:0 .5rem;
+            }
+
+            .rw-center{
+                align-items:center;
+                color:#8284a2;
+            }
+
+            .form{
+                padding:0 2rem;
+                margin-top:1rem;
+            }
+
+            .inp-txt, textarea{
+                min-width:100%;
+                max-width:100%;
+                border:none;
+                outline:none;
+                padding:.5rem .5rem;
+            }
+
+            .inp-txt::placeholder {
+                font-size: 1rem;
+                font-weight:600;
+                color:#8284a2;
+            }
+
+            .inp-txt{
+                font-size: 1rem;
+                font-weight:600;
+            }
+
+            textarea{
+                font-size: .8rem;
+                font-family: 'Raleway', sans-serif;
+                font-weight:500;
+            }
+
+            textarea::placeholder {
+                font-size: .8rem;
+                color:#8284a2;
+                font-family: 'Raleway', sans-serif;
+                font-weight:500;
+            }
+
+            .btn{
+                display:flex;
+                padding:.5rem;
+                background:white;
+                color:#8284a2;
+                font-weight:500;
+                align-items:center;
+                border-radius:10px;
+                margin:0 0 0 .5rem;
+                overflow:hidden;
+            }
+
+            .material-symbols-outlined{
+                font-size:1.2rem;
+                margin-right:.2rem;
+            }
+
+            .btn-outline{
+                border:1px #dbdbdb solid;
+            }
+
+            .btn-purple{
+                background:var(--main-color);
+                border:1px var(--main-color) solid;
+                color:white;
+                font-weight:600;
+                height:100%;
+            }
+
+            select{
+                background:none;
+                border:none;
+                color:#8284a2;
+                font-size:1rem;
+                font-weight:500;
+                -webkit-appearance:none;
+                -moz-appearance:none;
+                -ms-appearance:none;
+                appearance:none;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            input[type="date"]{
+                border:none;
+                outline:none;
+                font-family: 'Raleway', sans-serif;
+                color:#8284a2;
+            }
+
+            .checkbox{
+                width:20px;
+                height:20px;
+                border-radius:calc(20px / 2);
+                background:none;
+                border:1px #8284a2 solid;
+                position:absolute;
+            }
+
+            .checkbox-sel{
+                background:var(--main-color);
+                border-color:var(--main-color);
+            }
+
+            .checkbox-sel::after{
+                content:"✓";
+                color:white;
+                text-align:center;
+            }
+
+            .details{
+                font-size:.9rem;
+            }
+
+            .user-id{
+                width:50px;
+                border:none;
+                outline:none;
+            }
+
+            .user-id::placeholder{
+                color:#8284a2;
+                font-family: 'Raleway', sans-serif;
+                font-weight:500;
+            }
+
+            .viewport{
+                width:100vw;
+                height:100vh;
+                background-image: url(https://images.unsplash.com/photo-1458322493962-69c5a4ef7ddf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+                background-repeat: no-repeat;
+                background-size: cover;
+                position:relative;
+            }
+
+            .overlay{
+                width:100%;
+                height:100%;
+                background: linear-gradient(to right, var(--main-color) -5%, #ffffff00 100%);
+                display:grid;
+                grid-template-columns: 1fr 2fr;
+            }
+
+            .column{
+                display:flex;
+                flex-direction:column;
+            }
+
+            .log-form{
+                width: 100%;
+                height: 100%;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                padding:0 5rem;
+            }
+
+            .input{
+                border:none;
+                border-bottom: 1px black solid;
+                padding: 1rem 0;
+                outline:none;
+                background:transparent;
+                color:black;
+                font-weight:600;
+                /*border-radius:10px;*/
+            }
+
+            .mb{
+                margin-bottom:.8rem;
+            }
+
+            .mb-x{
+                margin-bottom:1.5rem;
+            }
+
+            .log-title{
+                font-weight: 900;
+                font-size:2rem;
+                color:black;
+            }
+
+            .log-sub-title{
+                color:black;
+                font-weight:600;
+            }
+
+            .inp-title{
+                color:black;
+                font-weight:900;
+            }
+
+            .count_tag{
+                background:#d4d3d9;
+                width:16px;
+                height:16px;
+                border-radius:calc(16px / 2);
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                color:gray;
+                font-size:.7rem;
+                text-align:center;
+                margin-left:.2rem;
+            }
+
+            .account{
+                position:absolute;
+                right:20px;
+                bottom:20px;
+                
+                border-radius:1rem;
+                overflow:hidden;
+            }
+
+            .acc-key{
+                font-weight:900;
+                color:gray;
+            }
+
+            .acc-value{
+                font-weight:bold;
+                margin-left:.2rem;
+            }
+
+            .acc_content{
+                padding:1rem;
+                background:white;
+            }
+
+            .logout-btn{
+                color:white;
+                font-weight:bold;
+                padding:1rem;
+                background:red;
+                border:none;
+                width:100%;
+            }
+
+
+
+    body(class="row")

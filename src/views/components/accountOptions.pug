@@ -1,0 +1,16 @@
+mixin accountOptions(user)
+    .account.shadow
+        .acc_content
+            .row.mb
+                p.acc-key Name:
+                p.acc-value #{user.name}
+            .row.mb
+                p.acc-key Username:
+                p.acc-value #{user.username}
+            .row
+                p.acc-key ID:
+                p.acc-value ##{user.id}
+        form(action="/signout" method="POST") 
+            button(type="submit").logout-btn.row
+                span.material-symbols-outlined logout
+                p Logout

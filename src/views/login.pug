@@ -1,0 +1,22 @@
+include components/warning
+include header
+
+.viewport
+    .overlay
+        form.log-form(enctype="multipart/form-data" method="POST")
+            if error
+                +warning(error.type,error.messages)
+            .row(style="align-items:center;")
+                p.log-title.mb Log In
+                span.dot(style="background-color:black;")
+                a.log-sub-title(href="/signup" style="color:white;") SignUp
+            p.log-sub-title.mb-x Enter your credentials to access your account.
+            p.inp-title.mb Username
+            input.input.mb-x(type="text" value=`${data && data.username ? data.username : ""}` name="username")
+            p.inp-title.mb Password
+            input.input.mb-x(type="password" value=`${data && data.password ? data.password : ""}` name="password")
+            button.row(style="background:none;border:none;align-self:flex-end;")
+                p.inp-title Submit
+                span.material-symbols-outlined.inp-title(style="margin:0;") chevron_right
+
+
